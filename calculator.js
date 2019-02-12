@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            UIR Grade Calculator
-// @description     帮助你直视你的GPA - 适用NIR
+// @description     帮助你直视你的GPA - 适用UIR
 // @author          xq114
 // @version         0.3
 // @include         *
