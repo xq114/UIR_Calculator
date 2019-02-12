@@ -68,6 +68,6 @@
     g_div.id = "gpa_label";
     g_div.style.background = "#f3f2ef";
     g_div.style.textAlign = "center";
-    g_div.appendChild(document.createTextNode(" " + class_counter + " classes included, and Your GPA is: " + get_average(grade_list)));
+    g_div.appendChild(document.createTextNode(" " + class_counter + " classes included, and Your GPA is: " + get_average(grade_list).toFixed(3)));
     insertAfter(g_div, table);
 })();
