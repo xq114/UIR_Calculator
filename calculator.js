@@ -1,10 +1,8 @@
 // ==UserScript==
-// @name            NIR Grade Calculator
+// @name            UIR Grade Calculator
 // @description     帮助你直视你的GPA - 适用NIR
 // @author          xq114
-// @grant           GM_xmlhttpRequest
-// @include         https://*.nir.cn/*
-// @version         0.1
+// @version         0.2
 // @icon            
 // @namespace       xq114_calc
 // ==/UserScript==
@@ -50,15 +48,15 @@
     var grade_list = [];
     var class_counter = 0;
     for (var x of grade_table) {
-        var class_grade = new Object();
-        if(isNaN(x.cells[7].textContent)) continue;
+        var class_grade = {};
+        if (isNaN(x.cells[7].textContent)) continue;
         // if(x.cells[9].textContent !== "是") continue;
         class_grade.point = parseFloat(x.cells[7].textContent);
         class_grade.score = parseFloat(x.cells[12].textContent);
-        if (class_grade.point >= 90)
-            x.cells[0].style.color = "green";
-        else if (class_grade.point < 82)
-            x.cells[0].style.color = "red";
+        if (class_grade.score >= 90)
+            x.cells[4].style.color = "green";
+        else if (class_grade.score < 82)
+            x.cells[4].style.color = "red";
         grade_list.push(class_grade);
         class_counter += 1;
     }
@@ -68,6 +66,8 @@
     g_div.id = "gpa_label";
     g_div.style.background = "#f3f2ef";
     g_div.style.textAlign = "center";
+    g_div.style.fontSize = "28px";
+    g_div.style.color = "blue";
     g_div.appendChild(document.createTextNode(" " + class_counter + " classes included, and Your GPA is: " + get_average(grade_list).toFixed(3)));
     insertAfter(g_div, table);
 })();
