@@ -52,7 +52,7 @@
     for (var x of grade_table) {
         var class_grade = new Object();
         if(isNaN(x.cells[7].textContent)) continue;
-        if(x.cells[9].textContent !== "是") continue;
+        // if(x.cells[9].textContent !== "是") continue;
         class_grade.point = parseFloat(x.cells[7].textContent);
         class_grade.score = parseFloat(x.cells[12].textContent);
         if (class_grade.point >= 90)
