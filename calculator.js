@@ -68,7 +68,7 @@
     g_div.style.background = "#f3f2ef";
     g_div.style.textAlign = "center";
     g_div.style.fontSize = "28px";
-    g_div.style.color = "grey";
+    // g_div.style.color = "grey";
     var em_gpa = document.createElement("em");
     em_gpa.appendChild(document.createTextNode(get_average(grade_list).toFixed(3)));
     g_div.appendChild(document.createTextNode(" " + class_counter + " classes included, and Your GPA is: "));
