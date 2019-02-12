@@ -2,7 +2,7 @@
 // @name            UIR Grade Calculator
 // @description     帮助你直视你的GPA - 适用UIR
 // @author          xq114
-// @version         0.3
+// @version         0.3.1
 // @include         *
 // @icon            https://i.loli.net/2019/02/12/5c62d3d839e4d.png
 // @namespace       xq114_calc
@@ -68,7 +68,10 @@
     g_div.style.background = "#f3f2ef";
     g_div.style.textAlign = "center";
     g_div.style.fontSize = "28px";
-    g_div.style.color = "blue";
-    g_div.appendChild(document.createTextNode(" " + class_counter + " classes included, and Your GPA is: " + get_average(grade_list).toFixed(3)));
+    g_div.style.color = "grey";
+    var em_gpa = document.createElement("em");
+    em_gpa.appendChild(document.createTextNode(get_average(grade_list).toFixed(3)));
+    g_div.appendChild(document.createTextNode(" " + class_counter + " classes included, and Your GPA is: "));
+    g_div.appendChild(em_gpa);
     insertAfter(g_div, table);
 })();
