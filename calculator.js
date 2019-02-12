@@ -2,8 +2,9 @@
 // @name            UIR Grade Calculator
 // @description     帮助你直视你的GPA - 适用NIR
 // @author          xq114
-// @version         0.2
-// @icon            
+// @version         0.3
+// @include         *
+// @icon            https://i.loli.net/2019/02/12/5c62d3d839e4d.png
 // @namespace       xq114_calc
 // ==/UserScript==
 
