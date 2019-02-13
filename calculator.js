@@ -34,14 +34,14 @@
         return (sum_grade / sum_point);
     }
 
-    function insertAfter(newElement, targetElement) {
-        var parent = targetElement.parentNode;
-        if (parent.lastChild == targetElement) {
-            parent.appendChild(newElement);
-        } else {
-            parent.insertBefore(newElement, targetElement.nextSibling);
-        }
-    }
+    // function insertAfter(newElement, targetElement) {
+    //     var parent = targetElement.parentNode;
+    //     if (parent.lastChild == targetElement) {
+    //         parent.appendChild(newElement);
+    //     } else {
+    //         parent.insertBefore(newElement, targetElement.nextSibling);
+    //     }
+    // }
 
     // get infomation
     var table = document.getElementsByClassName("bot_line")[0];
@@ -67,11 +67,18 @@
     g_div.id = "gpa_label";
     g_div.style.background = "#f3f2ef";
     g_div.style.textAlign = "center";
-    g_div.style.fontSize = "28px";
+    g_div.style.fontSize = "20px";
     // g_div.style.color = "grey";
     var em_gpa = document.createElement("span");
     em_gpa.appendChild(document.createTextNode(get_average(grade_list).toFixed(3)));
+    em_gpa.style.color = "#FFF";
     g_div.appendChild(document.createTextNode(" " + class_counter + " classes included, and Your GPA is: "));
     g_div.appendChild(em_gpa);
-    insertAfter(g_div, table);
+    em_gpa.onmouseover = function () {
+        this.style.color = "#000";
+    };
+    em_gpa.onmouseout = function () {
+        this.style.color = "#FFF";
+    }
+    table.parentNode.insertBefore(g_div, table);
 })();
